@@ -19,8 +19,9 @@ set.seed(2017)
 n <- 10 # number of districts
 r <- 100 # number of resources
 num_strat <- 3 # number of different strategies (e.g. front-loaded, uniform, etc.)
-num_place <- 10 # number of resource placements to simulate for each strategy
+num_place <- 4000 # number of resource placements to simulate for each strategy
 total_num <- num_strat * num_place # total number of simulated placements
+(num_matches <- choose(total_num, 2)) # total number of matches that will be played
 
 # Set the vector of shape parameters to choose different strategy regimes
 strat <- matrix(nrow=num_strat, ncol=n)
@@ -53,7 +54,11 @@ x <- x_new
 ######################################################
 
 # Simulate the votes won by each placement in each matchup
+# Start the clock!
+ptm <- proc.time()
 votes <- runTournament(x, n, total_num)
+# Stop the clock
+proc.time() - ptm
 
 # Calculate the average number of votes won for each placement
 avg <- rowMeans(votes, na.rm=TRUE)
