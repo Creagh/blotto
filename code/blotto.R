@@ -5,6 +5,7 @@ setwd("~/Google Drive/Documents/blotto/code")
 # Dependencies:
 source("scoring.R")
 source("conduct_tournament.R")
+source("tweak_placements.R")
 
 ######################################################
 # Resource Placement Simulation
@@ -18,7 +19,7 @@ set.seed(2017)
 n <- 10 # number of districts
 r <- 100 # number of resources
 num_strat <- 3 # number of different strategies (e.g. front-loaded, uniform, etc.)
-num_place <- 1000 # number of resource placements to simulate for each strategy
+num_place <- 10 # number of resource placements to simulate for each strategy
 total_num <- num_strat * num_place # total number of simulated placements
 
 # Set the vector of shape parameters to choose different strategy regimes
@@ -39,6 +40,13 @@ x <- matrix(nrow=total_num, ncol=n)
 for(i in 1:total_num) {
 	x[i,] <- rmultinom(n=1, size=r, prob=prob[i,])
 }
+
+# Tweak the sampled placements such that no resources are "wasted"
+x_new <- tweak(x, n, total_num)
+x_old <- x
+x <- x_new
+#is_opt <- checkOpt(x_new, n, total_num)
+#which(!is_opt)
 
 ######################################################
 # Tournament Simulation
@@ -70,3 +78,5 @@ cutoff <- quantile(avg, prob=0.99)
 top1pct <- which(avg >= cutoff)
 order <- order(avg[top1pct], decreasing=TRUE)
 x[top1pct[order],]
+
+
