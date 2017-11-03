@@ -1,0 +1,224 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{xcolor,colortbl}
+
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\chead{\hmwkClass } % Top center header
+\rhead{\quad \hmwkTitle} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+\newcommand{\mc}[2]{\multicolumn{#1}{c}{#2}}
+\definecolor{Gray}{gray}{0.85}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+\newcolumntype{a}{>{\columncolor{white}}c}
+\newcolumntype{b}{>{\columncolor{white}}c}
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\hmwkTitle}{ \url{http://stat.ubc.ca/\textasciitilde creagh/}} % Assignment title
+\newcommand{\hmwkDueDate}{Friday,\ September\ 29,\ 2017 } % Due date
+\newcommand{\hmwkClass}{\texttt{creagh@stat.ubc.ca}} % Course/class
+\newcommand{\hmwkClassName}{Social \& Information Networks} %Course name
+\newcommand{\hmwkClassTime}{} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{} % Teacher/lecturer
+\newcommand{\hmwkAuthorName}{Creagh Briercliffe} % Your name
+\newcommand{\hmwkStudentNum}{78402147}% My student number
+\newcommand{\hmwkEmail}{creagh@stat.ubc.ca} %My email
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ \hmwkClassName}}\\
+\textmd{\textbf{\hmwkTitle}}\\
+\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+%\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+\vspace{3in}
+}
+
+\author{
+\textbf{\hmwkAuthorName}\\
+\textbf{\hmwkStudentNum}\\
+\textbf{\hmwkEmail} 
+}
+
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%\maketitle
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+%\newpage
+%\tableofcontents
+%\newpage
+
+
+\centerline{\LARGE\textbf{Jane Street Symposium - Blotto}}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\begin{homeworkProblem}[\arabic{homeworkProblemCounter}. What's your entry?]
+%\includegraphics[width=0.75\columnwidth]{example_figure} % Example image
+
+\begin{table}[h]
+\center
+\begin{tabular}{| l | a | b | a | b | a | b | a | b | a | b |}
+\hline
+\rowcolor{LightCyan}
+District  & D$_1$ & D$_2$ & D$_3$ & D$_4$ & D$_5$ & D$_6$ & D$_7$ & D$_8$ & D$_9$ & D$_{10}$\\
+\hline
+My Entry & 37 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\ \hline
+\end{tabular}
+\end{table}
+
+\end{homeworkProblem}
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}[\arabic{homeworkProblemCounter}. How did you go about coming up with it?]
+
+\textbf{High-level idea:}
+\\
+
+I simulated several of my own tournaments, and chose the strategy that performed the best on average. In each tournament, I randomly sampled a large number of competing submissions based on various strategies and played all combinations in head-to-head matchups. Some strategies used uniform sampling across districts, while others used front- or back-loaded biased sampling. I also included several deterministically-chosen submissions that I thought would be popular choices. I scored submissions based on the scoring rules outlined in the game description.
+\\
+
+\textbf{Some low-level details:}
+
+\begin{itemize}
+\item Given that we are only allowed to place a whole number of resources in each district, some resource allocations are less ``wasteful'' than others, from an offensive-viewpoint. For example, placing 2 resources in district 10 will not win a vote in any situations where 1 resource will not. Furthermore, for district 10, the least-wasteful allocations are $\{0, 1, 11, 21, \ldots, 91\} = \{0\} \cup \{ \,k \in \mathbb{N} | k \mod 10 = 1 \land k \leq 100\}$.
+Thus, since our objective is to play offensively, I made sure to simulate a number of submissions that followed this minimal-waste strategy. Ultimately, the submission that I chose also adheres to this strategy.
+\item I simulated submissions from the Dirichlet-multinomial distribution. I chose the shape parameter vector of the Dirichlet distribution according to the type of strategy I wanted to simulate.
+\end{itemize}
+
+\end{homeworkProblem}
+
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 3
+%----------------------------------------------------------------------------------------
+
+\begin{homeworkProblem}[\arabic{homeworkProblemCounter}. Does it change if you are allowed decimal numbers of units?]
+
+Yes, I would makes some changes to my approach. First, the idea of least-wasteful allocations (mentioned above) no longer applies. Second, I would need to alter the sampling distributions for my simulations, or simply add some random noise to each submission. 
+\\
+
+That said, I would still employ a similar approach of simulating tournaments of strategically-biased random submissions. With more time, I would construct a larger tournament of tournament-winners as a genetic algorithm. In this algorithm, a tournament is a generation of species (submissions). Species are scored based on a fitness function (the scoring rules), and propagated to the next generation with probability proportional to their fitness. This approach would help to better explore a larger space of possible submissions.
+
+
+\end{homeworkProblem}
+
+
+\end{document}
