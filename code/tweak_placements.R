@@ -3,6 +3,7 @@
 # @param x - matrix of simulated resource placements
 # @param n - number of districts
 # @param total_num - total number of simulated placements
+# @param prob - the matrix of multinomial prob vectors for each placement
 # @returns matrix of "optimal" simulated resource placements
 ######################################################
 
@@ -16,7 +17,7 @@
 # Thus, placing j resources in district n>1 will result in minimal waste when j mod n = 1, or j = 0.
 # Note: when n=1, no allocations are optimally less wasteful
 
-tweak <- function(x, n, total_num) {
+tweak <- function(x, n, total_num, prob) {
 	
 	# loop through all placements
 	for(k in 1:total_num){ 
@@ -39,8 +40,9 @@ tweak <- function(x, n, total_num) {
 		# Redistribute any skimmed resources
 		if(excess > 0) {
 				
-			# randomize the order to attempt to redistribute excess
-			sample <- sample(1:n, replace=FALSE)
+			# randomize the order to attempt to redistribute excess &
+			# weight the order according to the strategy being used
+			sample <- sample(1:n, replace=FALSE, prob=prob[k,])
 			
 			# loop through redistribution order	
 			for(j in sample) {

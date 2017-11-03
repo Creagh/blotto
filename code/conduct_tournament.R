@@ -18,7 +18,7 @@ runTournament <- function(x, n, total_num) {
 	iteration <- 1 
 	for(i in 1:(total_num - 1)){
 		for(j in (i+1):total_num){
-			if(iteration %% 100000 == 0) { # print every 100,000 iterations
+			if(iteration %% 1000000 == 0) { # print every 1,000,000 iterations
 				print(paste("iteration: ", iteration))
 			}
 			scores <- getScore(x[i,], x[j,], n)
