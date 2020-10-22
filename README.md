@@ -27,3 +27,5 @@ My submission document can be found [here](explanation/blotto_briercliffe.pdf).
 My general approach was to simulate a number of tournaments consisting of some randomly generated entries, as well as some cleverly chosen deterministic ones. I chose the strategy that performed the best on average in my simulations.
 
 R code for my simulations are found [here](code).
+
+I was successfully chosen to attend the symposium :)
