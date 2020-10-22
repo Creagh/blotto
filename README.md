@@ -1,6 +1,6 @@
 # Blotto
 
-My submission for the Jane Street Symposium competition (2017)
+My submission for the [Jane Street](https://www.janestreet.com/) Symposium competition (2017)
 
 ## Puzzle Description
 
